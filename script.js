@@ -1,30 +1,16 @@
-let s = prompt("Enter a string");
-let arr = s.split(" ");
-const count = arr.length;
-let arr2 = arr;
-let i = 0;
-while (true) {
-  i = prompt("The position of word you want to replace");
-  i = Number(i);
-  if (isNaN(i)) {
-    alert("Enter a number, it should the postion of the target word");
-  } else if(i <= count && i >=0) {
-    break
-  }
-  else{
-    alert("not a valid postition (>=0 and < the number of words)")
-  }
-}
+let sen= prompt("Enter a sentence:");
 
-const rep = prompt("Enter the word you want to switch with the given index");
-arr2[i-1] = rep;
-const replacedS = arr2.join(" ");
-let ex = false
-const check = prompt("enter a word to check if it exists")
-for(let x = 0; x < count; x++){
-    if (arr2[x].toUpperCase == check.toUpperCase){
-        ex = true
-    }
-}
-const ans = `Real String: ${s}<br>Number of words: ${count}<br>String with replaced word: ${replacedS}<br>Existence of the given word in a string: ${ex}`
-alert(ans)
+let Count = sen.trim().split("").length;
+
+let wordReplace = prompt("Enter the word to replace:");
+let replaceWord = prompt("Enter the new word:");
+let newSen = sen.replaceAll(wordReplace, replaceWord);
+
+
+let substring = prompt("Enter a word to check in the sentence:");
+let isPresent = sen.includes(substring);
+
+console.log("Original Sentence: ",sen);
+console.log("Word Count: ",Count);
+console.log("After Replacement: ",newSen);
+console.log("Is the word:",isPresent ? "Yes" : "No");
